@@ -34,7 +34,7 @@ resource "aws_internet_gateway" "internet-gateway" {
 
 # Public subnet 1.
 resource "aws_subnet" "public-1" {
- availability_zone = var.first_az
+ availability_zone = data.aws_availability_zones.available.names[0]
  vpc_id = aws_vpc.vpc.id
  cidr_block = var.public_subnet1_cidr_block
 
@@ -47,7 +47,7 @@ resource "aws_subnet" "public-1" {
 
 # Public subnet 2.
 resource "aws_subnet" "public-2" {
-  availability_zone = var.second_az
+  availability_zone = data.aws_availability_zones.available.names[1]
   vpc_id = aws_vpc.vpc.id
   cidr_block = var.public_subnet2_cidr_block
 
@@ -61,7 +61,7 @@ resource "aws_subnet" "public-2" {
 
 # Private subnet 1.
 resource "aws_subnet" "private_1" {
-  availability_zone = var.first_az
+  availability_zone = data.aws_availability_zones.available.names[0]
   vpc_id = aws_vpc.vpc.id
   cidr_block = var.private_subnet1_cidr_block
 
@@ -74,7 +74,7 @@ resource "aws_subnet" "private_1" {
 
 # Private subnet 2.
 resource "aws_subnet" "private_2" {
-  availability_zone = var.second_az
+  availability_zone = data.aws_availability_zones.available.names[1]
   vpc_id = aws_vpc.vpc.id
   cidr_block = var.private_subnet2_cidr_block
 

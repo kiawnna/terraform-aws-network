@@ -49,3 +49,13 @@ the public and private subnets.
 
 See the `variables.tf` file for further customizations.
 
+## Tags
+Tags are automatically added to all resources where possible. Tags will have the following format:
+
+```
+tags = {
+    Name = "shared-${var.environment}-resource"
+    Deployment_Method = "terraform"
+    Environment = var.environment
+  }
+```

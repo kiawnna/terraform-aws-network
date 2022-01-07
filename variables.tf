@@ -24,13 +24,3 @@ variable "private_subnet2_cidr_block" {
     type = string
     default = "10.200.3.0/24"
 }
-
-// Availability Zones
-variable "first_az" {
-  type = string
-  default = data.aws_availability_zones.available.names[0]
-}
-variable "second_az" {
-  type = string
-  default = data.aws_availability_zones.available.names[1]
-}
