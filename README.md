@@ -21,14 +21,31 @@ module "network" {
 * A private route table
 
 ## Outputs
-Reference outputs like:
-module.vpc.vpc_id
+The vpc, all subnets, and internet gateway ids can be accessed as outputs. 
+Reference them as:
+
+> module.network_module_name.vpc_id
+> 
+> module.network_module_name.public_subnet_id1
+> 
+> module.network_module_name.public_subnet_id2
+> 
+> module.network_module_name.private_subnet_id1
+> 
+> module.network_module_name.private_subnet_id2
+> 
+> module.network_module_name.internet_gateway_id
 
 ## Variables / Customization
 Cidr blocks can be customized. Defaults are:
+* vpc &rarr; "10.200.0.0/16"
+* public subnet 1 &rarr; "10.200.0.0/24"
+* public subnet 2 &rarr; "10.200.0.1/24"
+* private subnet 1 &rarr; "10.200.0.2/24"
+* private subnet 2 &rarr; "10.200.0.3/24"
 
 Availability zones are automatically determined by region and then the first two are assigned to
 the public and private subnets.
 
-See the variables.tf file for further customizations.
+See the `variables.tf` file for further customizations.
 

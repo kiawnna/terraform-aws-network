@@ -13,6 +13,6 @@ output "private_subnet_id" {
 output "private_subnet_id2" {
   value = aws_subnet.private_2.id
 }
-output "internet_gateway" {
+output "internet_gateway_id" {
   value = aws_internet_gateway.internet-gateway.id
 }

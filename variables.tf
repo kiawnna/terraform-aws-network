@@ -18,11 +18,11 @@ variable "public_subnet2_cidr_block" {
 }
 variable "private_subnet1_cidr_block" {
     type = string
-    default = "10.200.3.0/24"
+    default = "10.200.2.0/24"
 }
 variable "private_subnet2_cidr_block" {
     type = string
-    default = "10.200.4.0/24"
+    default = "10.200.3.0/24"
 }
 
 // Availability Zones
